@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var USER = require("../database/users");
 //practica2 crud persona
 var USERs = require("../database/Persona");
 //practica2 crud mascota
