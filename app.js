@@ -6,8 +6,9 @@ var logger = require('morgan');
 
 //var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
-//ruta predefinida crud 1line espacing
-var apireRouter = require('./routes/apirouter');
+
+var service = require('./routes/api/v1.0/services');
+
 var app = express();
 
 // view engine setup
@@ -19,8 +20,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-//ruta definida crud 1line espacing
-app.use('/v1.0/api',apireRouter);
+
+app.use('/api/v1.0/', service);
+
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 
